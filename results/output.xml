@@ -1,39 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180622 11:47:11.102" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
+<robot generated="20180622 13:35:48.588" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
 <suite source="/Users/mdhanjal/devqa/robot/test_cases/create_l1_user.robot" id="s1" name="Create L1 User">
 <test id="s1-t1" name="Create L1 User">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<kw name="Open Stage2 Environment" library="portal_common_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
-<arg>https://qa-web2.dev.coredial.com/login</arg>
+<arg>${stage2}</arg>
+<arg>chrome</arg>
 </arguments>
-<msg timestamp="20180622 11:47:11.482" level="INFO">Opening url 'https://qa-web2.dev.coredial.com/login'</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180622 11:47:11.482" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" endtime="20180622 11:47:11.482" starttime="20180622 11:47:11.482"></status>
+<msg timestamp="20180622 13:35:49.559" level="INFO">Opening browser 'chrome' to base url 'https://stage2-web2.dev.coredial.com/login'.</msg>
+<status status="PASS" endtime="20180622 13:35:53.127" starttime="20180622 13:35:49.558"></status>
 </kw>
-<msg timestamp="20180622 11:47:11.484" level="FAIL">No browser is open.</msg>
-<status status="FAIL" endtime="20180622 11:47:11.484" starttime="20180622 11:47:11.481"></status>
+<status status="PASS" endtime="20180622 13:35:53.127" starttime="20180622 13:35:49.558"></status>
+</kw>
+<kw name="Portal Login Page Should Be Loaded" library="portal_login_page">
+<doc>Check if the login page is loaded and ready to use</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${PLP_LOCATORS.login_button}</arg>
+</arguments>
+<status status="PASS" endtime="20180622 13:35:53.160" starttime="20180622 13:35:53.129"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>/login</arg>
+</arguments>
+<msg timestamp="20180622 13:35:53.171" level="INFO">Current location contains '/login'.</msg>
+<status status="PASS" endtime="20180622 13:35:53.171" starttime="20180622 13:35:53.160"></status>
+</kw>
+<status status="PASS" endtime="20180622 13:35:53.171" starttime="20180622 13:35:53.128"></status>
+</kw>
+<kw name="Login With Credentials" library="portal_login_page">
+<arguments>
+<arg>admin</arg>
+<arg>Password1</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PLP_LOCATORS.username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20180622 13:35:53.173" level="INFO">Typing text 'admin' into text field 'username'.</msg>
+<status status="PASS" endtime="20180622 13:35:53.267" starttime="20180622 13:35:53.172"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PLP_LOCATORS.password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20180622 13:35:53.267" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
+<status status="PASS" endtime="20180622 13:35:53.376" starttime="20180622 13:35:53.267"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PLP_LOCATORS.login_button}</arg>
+</arguments>
+<msg timestamp="20180622 13:35:53.377" level="INFO">Clicking element '//button[text()='Sign In']'.</msg>
+<status status="PASS" endtime="20180622 13:35:56.899" starttime="20180622 13:35:53.376"></status>
+</kw>
+<status status="PASS" endtime="20180622 13:35:56.900" starttime="20180622 13:35:53.172"></status>
 </kw>
 <doc>Login as the admin and create a L4 User</doc>
-<status status="FAIL" endtime="20180622 11:47:11.484" critical="yes" starttime="20180622 11:47:11.481">No browser is open.</status>
+<status status="PASS" endtime="20180622 13:35:56.900" critical="yes" starttime="20180622 13:35:49.557"></status>
 </test>
-<status status="FAIL" endtime="20180622 11:47:11.485" starttime="20180622 11:47:11.104"></status>
+<status status="PASS" endtime="20180622 13:35:56.901" starttime="20180622 13:35:48.590"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Create L1 User" pass="0">Create L1 User</stat>
+<stat fail="0" id="s1" name="Create L1 User" pass="1">Create L1 User</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20180622 11:47:11.158" level="ERROR">Error in file '/Users/mdhanjal/devqa/robot/test_cases/create_l1_user.robot': Resource file 'robot/pages/portal_login_page.robot' does not exist.</msg>
-<msg timestamp="20180622 11:47:11.159" level="ERROR">Error in file '/Users/mdhanjal/devqa/robot/test_cases/create_l1_user.robot': Resource file 'robot/pages/portal_common_keywords.robot' does not exist.</msg>
 </errors>
 </robot>
