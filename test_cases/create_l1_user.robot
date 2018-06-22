@@ -20,7 +20,7 @@ Create L1 User
     New User Edit Page Should Be Loaded
     Input First Name    Robot1
     Input Last Name    Test1
-    Input User Name    robotuser
+    Input User Name    robotuser1
     Input Password    Password1
     Input Confirm Password    Password1
     Input Email    robottest@coredial.com
