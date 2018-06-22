@@ -16,7 +16,7 @@ Login With Credentials
 
 Portal Login Page Should Be Loaded
     [Documentation]    Check if the login page is loaded and ready to use
-    Wait Until Page Contains Element    ${PLP_LOCATORS.login_button}
+    Wait Until Element Is Enabled    ${PLP_LOCATORS.login_button}
     Location Should Contain    /login
     
     
