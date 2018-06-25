@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180625 09:49:54.485" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
+<robot generated="20180625 10:27:42.079" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
 <suite source="/Users/mdhanjal/devqa/robot/test_cases/create_l1_user.robot" id="s1" name="Create L1 User">
 <test id="s1-t1" name="Create L1 User">
 <kw name="Setup">
@@ -12,8 +12,8 @@
 <assign>
 <var>${r}</var>
 </assign>
-<msg timestamp="20180625 09:49:55.364" level="INFO">${r} = X92JOV</msg>
-<status status="PASS" endtime="20180625 09:49:55.365" starttime="20180625 09:49:55.364"></status>
+<msg timestamp="20180625 10:27:43.850" level="INFO">${r} = NI0AL2</msg>
+<status status="PASS" endtime="20180625 10:27:43.851" starttime="20180625 10:27:43.850"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -21,10 +21,10 @@
 <arg>${random}</arg>
 <arg>${r}</arg>
 </arguments>
-<msg timestamp="20180625 09:49:55.365" level="INFO">${random} = X92JOV</msg>
-<status status="PASS" endtime="20180625 09:49:55.365" starttime="20180625 09:49:55.365"></status>
+<msg timestamp="20180625 10:27:43.851" level="INFO">${random} = NI0AL2</msg>
+<status status="PASS" endtime="20180625 10:27:43.851" starttime="20180625 10:27:43.851"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:49:55.365" starttime="20180625 09:49:55.364"></status>
+<status status="PASS" endtime="20180625 10:27:43.851" starttime="20180625 10:27:43.850"></status>
 </kw>
 <kw name="Open Qa Admin Environment" library="portal_common_keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -33,10 +33,10 @@
 <arg>${admin-qa}</arg>
 <arg>${browser}</arg>
 </arguments>
-<msg timestamp="20180625 09:49:55.366" level="INFO">Opening browser 'chrome' to base url 'https://qa-web.dev.coredial.com/login'.</msg>
-<status status="PASS" endtime="20180625 09:49:57.873" starttime="20180625 09:49:55.366"></status>
+<msg timestamp="20180625 10:27:43.852" level="INFO">Opening browser 'chrome' to base url 'https://qa-web.dev.coredial.com/login'.</msg>
+<status status="PASS" endtime="20180625 10:27:57.304" starttime="20180625 10:27:43.852"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:49:57.874" starttime="20180625 09:49:55.366"></status>
+<status status="PASS" endtime="20180625 10:27:57.304" starttime="20180625 10:27:43.852"></status>
 </kw>
 <kw name="Portal Login Page Should Be Loaded" library="portal_login_page">
 <doc>Check if the login page is loaded and ready to use</doc>
@@ -45,17 +45,17 @@
 <arguments>
 <arg>${PLP_LOCATORS.login_button}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:49:57.912" starttime="20180625 09:49:57.875"></status>
+<status status="PASS" endtime="20180625 10:27:57.408" starttime="20180625 10:27:57.306"></status>
 </kw>
 <kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>/login</arg>
 </arguments>
-<msg timestamp="20180625 09:49:57.920" level="INFO">Current location contains '/login'.</msg>
-<status status="PASS" endtime="20180625 09:49:57.920" starttime="20180625 09:49:57.912"></status>
+<msg timestamp="20180625 10:27:57.413" level="INFO">Current location contains '/login'.</msg>
+<status status="PASS" endtime="20180625 10:27:57.413" starttime="20180625 10:27:57.408"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:49:57.921" starttime="20180625 09:49:57.874"></status>
+<status status="PASS" endtime="20180625 10:27:57.413" starttime="20180625 10:27:57.305"></status>
 </kw>
 <kw name="Login With Credentials" library="portal_login_page">
 <arguments>
@@ -68,8 +68,8 @@
 <arg>${PLP_LOCATORS.username}</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20180625 09:49:57.922" level="INFO">Typing text 'admin' into text field 'username'.</msg>
-<status status="PASS" endtime="20180625 09:49:58.040" starttime="20180625 09:49:57.921"></status>
+<msg timestamp="20180625 10:27:57.414" level="INFO">Typing text 'admin' into text field 'username'.</msg>
+<status status="PASS" endtime="20180625 10:27:57.628" starttime="20180625 10:27:57.414"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -77,18 +77,18 @@
 <arg>${PLP_LOCATORS.password}</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20180625 09:49:58.041" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
-<status status="PASS" endtime="20180625 09:49:58.142" starttime="20180625 09:49:58.040"></status>
+<msg timestamp="20180625 10:27:57.629" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
+<status status="PASS" endtime="20180625 10:27:57.775" starttime="20180625 10:27:57.628"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PLP_LOCATORS.login_button}</arg>
 </arguments>
-<msg timestamp="20180625 09:49:58.143" level="INFO">Clicking element '//button[text()='Sign In']'.</msg>
-<status status="PASS" endtime="20180625 09:50:00.793" starttime="20180625 09:49:58.142"></status>
+<msg timestamp="20180625 10:27:57.776" level="INFO">Clicking element '//button[text()='Sign In']'.</msg>
+<status status="PASS" endtime="20180625 10:28:00.496" starttime="20180625 10:27:57.775"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:00.793" starttime="20180625 09:49:57.921"></status>
+<status status="PASS" endtime="20180625 10:28:00.497" starttime="20180625 10:27:57.413"></status>
 </kw>
 <kw name="Portal Home Page Should Be Loaded" library="portal_home_page">
 <doc>Check if the portal home page is loaded and ready to use</doc>
@@ -97,17 +97,17 @@
 <arguments>
 <arg>${PHP_LOCATORS.home_tab}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:00.824" starttime="20180625 09:50:00.794"></status>
+<status status="PASS" endtime="20180625 10:28:00.526" starttime="20180625 10:28:00.498"></status>
 </kw>
 <kw name="Location Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
 <arg>coredial.com</arg>
 </arguments>
-<msg timestamp="20180625 09:50:00.827" level="INFO">Current location contains 'coredial.com'.</msg>
-<status status="PASS" endtime="20180625 09:50:00.827" starttime="20180625 09:50:00.824"></status>
+<msg timestamp="20180625 10:28:00.530" level="INFO">Current location contains 'coredial.com'.</msg>
+<status status="PASS" endtime="20180625 10:28:00.530" starttime="20180625 10:28:00.526"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:00.828" starttime="20180625 09:50:00.794"></status>
+<status status="PASS" endtime="20180625 10:28:00.530" starttime="20180625 10:28:00.497"></status>
 </kw>
 <kw name="Go To Settings" library="portal_home_page">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
@@ -115,17 +115,36 @@
 <arguments>
 <arg>${PHP_LOCATORS.settings_tab}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:00.857" starttime="20180625 09:50:00.828"></status>
+<status status="PASS" endtime="20180625 10:28:00.559" starttime="20180625 10:28:00.531"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PHP_LOCATORS.settings_tab}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:00.858" level="INFO">Clicking element '//a[text()='Settings']'.</msg>
-<status status="PASS" endtime="20180625 09:50:04.279" starttime="20180625 09:50:00.858"></status>
+<msg timestamp="20180625 10:28:00.559" level="INFO">Clicking element '//a[text()='Settings']'.</msg>
+<status status="PASS" endtime="20180625 10:28:03.851" starttime="20180625 10:28:00.559"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:04.280" starttime="20180625 09:50:00.828"></status>
+<status status="PASS" endtime="20180625 10:28:03.851" starttime="20180625 10:28:00.531"></status>
+</kw>
+<kw name="Portal Settings Page Should Be Loaded" library="portal_settings_page">
+<doc>Check if the portal settings page is loaded and ready to use</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${PSP_LOCATORS.selected_settings_header}</arg>
+</arguments>
+<status status="PASS" endtime="20180625 10:28:03.893" starttime="20180625 10:28:03.852"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>/setting</arg>
+</arguments>
+<msg timestamp="20180625 10:28:03.897" level="INFO">Current location contains '/setting'.</msg>
+<status status="PASS" endtime="20180625 10:28:03.897" starttime="20180625 10:28:03.893"></status>
+</kw>
+<status status="PASS" endtime="20180625 10:28:03.897" starttime="20180625 10:28:03.851"></status>
 </kw>
 <kw name="Click Manage Users Tab" library="portal_settings_page">
 <doc>Clicks the Manage Users Tab</doc>
@@ -134,17 +153,17 @@
 <arguments>
 <arg>${PSP_LOCATORS.manage_users_tab}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:04.318" starttime="20180625 09:50:04.280"></status>
+<status status="PASS" endtime="20180625 10:28:03.925" starttime="20180625 10:28:03.898"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PSP_LOCATORS.manage_users_tab}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:04.319" level="INFO">Clicking element '//span[text()='Manage Users']'.</msg>
-<status status="PASS" endtime="20180625 09:50:06.709" starttime="20180625 09:50:04.318"></status>
+<msg timestamp="20180625 10:28:03.926" level="INFO">Clicking element '//span[text()='Manage Users']'.</msg>
+<status status="PASS" endtime="20180625 10:28:06.280" starttime="20180625 10:28:03.925"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:06.709" starttime="20180625 09:50:04.280"></status>
+<status status="PASS" endtime="20180625 10:28:06.280" starttime="20180625 10:28:03.897"></status>
 </kw>
 <kw name="Click New User Button" library="portal_settings_page">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
@@ -152,17 +171,17 @@
 <arguments>
 <arg>${PSP_LOCATORS.new_user_button}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:06.755" starttime="20180625 09:50:06.710"></status>
+<status status="PASS" endtime="20180625 10:28:06.373" starttime="20180625 10:28:06.281"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PSP_LOCATORS.new_user_button}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:06.756" level="INFO">Clicking element '(//a[text()='New User'])[1]'.</msg>
-<status status="PASS" endtime="20180625 09:50:11.322" starttime="20180625 09:50:06.755"></status>
+<msg timestamp="20180625 10:28:06.374" level="INFO">Clicking element '(//a[text()='New User'])[1]'.</msg>
+<status status="PASS" endtime="20180625 10:28:10.038" starttime="20180625 10:28:06.373"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:11.322" starttime="20180625 09:50:06.709"></status>
+<status status="PASS" endtime="20180625 10:28:10.038" starttime="20180625 10:28:06.281"></status>
 </kw>
 <kw name="New User Edit Page Should Be Loaded" library="new_user_edit_page">
 <doc>Check if the new user edit page is loaded and ready to use</doc>
@@ -171,9 +190,9 @@
 <arguments>
 <arg>${PNUP_LOCATORS.new_user_header}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:11.347" starttime="20180625 09:50:11.323"></status>
+<status status="PASS" endtime="20180625 10:28:10.065" starttime="20180625 10:28:10.039"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:11.347" starttime="20180625 09:50:11.322"></status>
+<status status="PASS" endtime="20180625 10:28:10.065" starttime="20180625 10:28:10.038"></status>
 </kw>
 <kw name="Input First Name" library="new_user_edit_page">
 <arguments>
@@ -184,7 +203,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.first_name_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:11.386" starttime="20180625 09:50:11.348"></status>
+<status status="PASS" endtime="20180625 10:28:10.110" starttime="20180625 10:28:10.066"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -192,10 +211,10 @@
 <arg>${PNUP_LOCATORS.first_name_field}</arg>
 <arg>${first-name}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:11.386" level="INFO">Typing text 'Robot+X92JOV' into text field 'firstName'.</msg>
-<status status="PASS" endtime="20180625 09:50:11.552" starttime="20180625 09:50:11.386"></status>
+<msg timestamp="20180625 10:28:10.111" level="INFO">Typing text 'Robot+NI0AL2' into text field 'firstName'.</msg>
+<status status="PASS" endtime="20180625 10:28:10.418" starttime="20180625 10:28:10.110"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:11.552" starttime="20180625 09:50:11.348"></status>
+<status status="PASS" endtime="20180625 10:28:10.418" starttime="20180625 10:28:10.065"></status>
 </kw>
 <kw name="Input Last Name" library="new_user_edit_page">
 <arguments>
@@ -206,7 +225,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.last_name_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:11.585" starttime="20180625 09:50:11.553"></status>
+<status status="PASS" endtime="20180625 10:28:10.450" starttime="20180625 10:28:10.419"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -214,10 +233,10 @@
 <arg>${PNUP_LOCATORS.last_name_field}</arg>
 <arg>${last-name}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:11.586" level="INFO">Typing text 'Test+X92JOV' into text field 'lastName'.</msg>
-<status status="PASS" endtime="20180625 09:50:11.727" starttime="20180625 09:50:11.585"></status>
+<msg timestamp="20180625 10:28:10.451" level="INFO">Typing text 'Test+NI0AL2' into text field 'lastName'.</msg>
+<status status="PASS" endtime="20180625 10:28:10.607" starttime="20180625 10:28:10.451"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:11.727" starttime="20180625 09:50:11.552"></status>
+<status status="PASS" endtime="20180625 10:28:10.607" starttime="20180625 10:28:10.419"></status>
 </kw>
 <kw name="Input User Name" library="new_user_edit_page">
 <arguments>
@@ -228,7 +247,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.user_name_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:11.759" starttime="20180625 09:50:11.728"></status>
+<status status="PASS" endtime="20180625 10:28:10.638" starttime="20180625 10:28:10.608"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -236,10 +255,10 @@
 <arg>${PNUP_LOCATORS.user_name_field}</arg>
 <arg>${user-name}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:11.760" level="INFO">Typing text 'robotuser+X92JOV' into text field 'username'.</msg>
-<status status="PASS" endtime="20180625 09:50:11.964" starttime="20180625 09:50:11.759"></status>
+<msg timestamp="20180625 10:28:10.638" level="INFO">Typing text 'robotuser+NI0AL2' into text field 'username'.</msg>
+<status status="PASS" endtime="20180625 10:28:10.841" starttime="20180625 10:28:10.638"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:11.964" starttime="20180625 09:50:11.727"></status>
+<status status="PASS" endtime="20180625 10:28:10.841" starttime="20180625 10:28:10.608"></status>
 </kw>
 <kw name="Input Password" library="new_user_edit_page">
 <arguments>
@@ -250,7 +269,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.password_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:11.994" starttime="20180625 09:50:11.965"></status>
+<status status="PASS" endtime="20180625 10:28:10.872" starttime="20180625 10:28:10.842"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -258,10 +277,10 @@
 <arg>${PNUP_LOCATORS.password_field}</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:11.995" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
-<status status="PASS" endtime="20180625 09:50:12.123" starttime="20180625 09:50:11.994"></status>
+<msg timestamp="20180625 10:28:10.873" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
+<status status="PASS" endtime="20180625 10:28:11.003" starttime="20180625 10:28:10.873"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:12.123" starttime="20180625 09:50:11.964"></status>
+<status status="PASS" endtime="20180625 10:28:11.003" starttime="20180625 10:28:10.842"></status>
 </kw>
 <kw name="Input Confirm Password" library="new_user_edit_page">
 <arguments>
@@ -272,7 +291,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.confirm_password_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:12.159" starttime="20180625 09:50:12.124"></status>
+<status status="PASS" endtime="20180625 10:28:11.037" starttime="20180625 10:28:11.004"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -280,10 +299,10 @@
 <arg>${PNUP_LOCATORS.confirm_password_field}</arg>
 <arg>${confirm-password}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:12.160" level="INFO">Typing text 'Password1' into text field 'confirmPassword'.</msg>
-<status status="PASS" endtime="20180625 09:50:12.297" starttime="20180625 09:50:12.159"></status>
+<msg timestamp="20180625 10:28:11.038" level="INFO">Typing text 'Password1' into text field 'confirmPassword'.</msg>
+<status status="PASS" endtime="20180625 10:28:11.159" starttime="20180625 10:28:11.037"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:12.297" starttime="20180625 09:50:12.123"></status>
+<status status="PASS" endtime="20180625 10:28:11.159" starttime="20180625 10:28:11.003"></status>
 </kw>
 <kw name="Input Email" library="new_user_edit_page">
 <arguments>
@@ -294,7 +313,7 @@
 <arguments>
 <arg>${PNUP_LOCATORS.email_field}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:12.331" starttime="20180625 09:50:12.298"></status>
+<status status="PASS" endtime="20180625 10:28:11.192" starttime="20180625 10:28:11.160"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -302,10 +321,10 @@
 <arg>${PNUP_LOCATORS.email_field}</arg>
 <arg>${email}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:12.331" level="INFO">Typing text 'robottest+X92JOV@coredial.com' into text field 'email'.</msg>
-<status status="PASS" endtime="20180625 09:50:12.637" starttime="20180625 09:50:12.331"></status>
+<msg timestamp="20180625 10:28:11.192" level="INFO">Typing text 'robottest+NI0AL2@coredial.com' into text field 'email'.</msg>
+<status status="PASS" endtime="20180625 10:28:11.496" starttime="20180625 10:28:11.192"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:12.637" starttime="20180625 09:50:12.297"></status>
+<status status="PASS" endtime="20180625 10:28:11.497" starttime="20180625 10:28:11.159"></status>
 </kw>
 <kw name="Click Save Button" library="new_user_edit_page">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
@@ -313,22 +332,22 @@
 <arguments>
 <arg>${PNUP_LOCATORS.save_button}</arg>
 </arguments>
-<status status="PASS" endtime="20180625 09:50:12.678" starttime="20180625 09:50:12.637"></status>
+<status status="PASS" endtime="20180625 10:28:11.526" starttime="20180625 10:28:11.497"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PNUP_LOCATORS.save_button}</arg>
 </arguments>
-<msg timestamp="20180625 09:50:12.678" level="INFO">Clicking element '(//button[@value='Save'])[1]'.</msg>
-<status status="PASS" endtime="20180625 09:50:15.735" starttime="20180625 09:50:12.678"></status>
+<msg timestamp="20180625 10:28:11.527" level="INFO">Clicking element '(//button[@value='Save'])[1]'.</msg>
+<status status="PASS" endtime="20180625 10:28:14.815" starttime="20180625 10:28:11.526"></status>
 </kw>
-<status status="PASS" endtime="20180625 09:50:15.736" starttime="20180625 09:50:12.637"></status>
+<status status="PASS" endtime="20180625 10:28:14.815" starttime="20180625 10:28:11.497"></status>
 </kw>
 <doc>Login as the admin and create a L4 User</doc>
-<status status="PASS" endtime="20180625 09:50:15.736" critical="yes" starttime="20180625 09:49:55.363"></status>
+<status status="PASS" endtime="20180625 10:28:14.815" critical="yes" starttime="20180625 10:27:43.849"></status>
 </test>
-<status status="PASS" endtime="20180625 09:50:15.737" starttime="20180625 09:49:54.487"></status>
+<status status="PASS" endtime="20180625 10:28:14.824" starttime="20180625 10:27:42.081"></status>
 </suite>
 <statistics>
 <total>
