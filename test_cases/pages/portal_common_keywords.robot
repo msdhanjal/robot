@@ -3,6 +3,7 @@ Documentation     Common keywords for portal
 Library           SeleniumLibrary
 
 *** Variables ***
+${env}=             https://qa-web2.dev.coredial.com/login
 ${qa}=              https://qa-web2.dev.coredial.com/login
 ${admin-qa}=        https://qa-web.dev.coredial.com/login
 ${uat}=             https://uat-web2.dev.coredial.com/login
@@ -12,6 +13,9 @@ ${admin-stage2}=    https://stage2-web.dev.coredial.com/login
 ${browser}=         chrome
 
 *** Keywords ***
+Open Environment
+    Open Browser    ${env}    ${browser}
+
 Open Qa Environment
     [Arguments]
     Open Browser    ${qa}    ${browser}

@@ -1,5 +1,5 @@
 results/
-log.html
-output.xml
-report.html
+results/log.html
+results/output.xml
+results/report.html
 selenium-screenshot-*.png
