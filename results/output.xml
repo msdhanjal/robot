@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180708 19:27:57.242" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<robot generated="20180708 19:29:26.039" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
 <suite source="C:\Framework\robot\test_cases\read_from_excel.robot" id="s1" name="Read From Excel">
 <test id="s1-t1" name="Get Value From Excel">
 <kw name="Open given Excel file">
@@ -11,9 +11,9 @@
 <arguments>
 <arg>${file-name}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.566" starttime="20180708 19:27:57.559"></status>
+<status status="PASS" endtime="20180708 19:29:26.364" starttime="20180708 19:29:26.357"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.566" starttime="20180708 19:27:57.559"></status>
+<status status="PASS" endtime="20180708 19:29:26.364" starttime="20180708 19:29:26.357"></status>
 </kw>
 <kw name="Sheet Name Test Case Name Column Name">
 <arguments>
@@ -29,8 +29,8 @@
 <arguments>
 <arg>${column-name}</arg>
 </arguments>
-<msg timestamp="20180708 19:27:57.567" level="INFO">Url</msg>
-<status status="PASS" endtime="20180708 19:27:57.567" starttime="20180708 19:27:57.567"></status>
+<msg timestamp="20180708 19:29:26.366" level="INFO">Url</msg>
+<status status="PASS" endtime="20180708 19:29:26.366" starttime="20180708 19:29:26.365"></status>
 </kw>
 <kw name="Get Column Count" library="ExcelLibrary">
 <doc>Returns the specific number of columns of the sheet name specified.</doc>
@@ -40,8 +40,8 @@
 <assign>
 <var>${column-count}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.568" level="INFO">${column-count} = 3</msg>
-<status status="PASS" endtime="20180708 19:27:57.568" starttime="20180708 19:27:57.567"></status>
+<msg timestamp="20180708 19:29:26.366" level="INFO">${column-count} = 3</msg>
+<status status="PASS" endtime="20180708 19:29:26.366" starttime="20180708 19:29:26.366"></status>
 </kw>
 <kw type="for" name="${y} IN RANGE [ 0 | ${column-count} ]">
 <kw type="foritem" name="${y} = 0">
@@ -55,8 +55,8 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.569" level="INFO">${header} = TestCase</msg>
-<status status="PASS" endtime="20180708 19:27:57.569" starttime="20180708 19:27:57.568"></status>
+<msg timestamp="20180708 19:29:26.367" level="INFO">${header} = TestCase</msg>
+<status status="PASS" endtime="20180708 19:29:26.367" starttime="20180708 19:29:26.367"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -66,9 +66,9 @@
 <arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.569" starttime="20180708 19:27:57.569"></status>
+<status status="PASS" endtime="20180708 19:29:26.368" starttime="20180708 19:29:26.367"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.569" starttime="20180708 19:27:57.568"></status>
+<status status="PASS" endtime="20180708 19:29:26.368" starttime="20180708 19:29:26.367"></status>
 </kw>
 <kw type="foritem" name="${y} = 1">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
@@ -81,8 +81,8 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.570" level="INFO">${header} = Url</msg>
-<status status="PASS" endtime="20180708 19:27:57.570" starttime="20180708 19:27:57.570"></status>
+<msg timestamp="20180708 19:29:26.368" level="INFO">${header} = Url</msg>
+<status status="PASS" endtime="20180708 19:29:26.368" starttime="20180708 19:29:26.368"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -98,12 +98,12 @@
 <arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<msg timestamp="20180708 19:27:57.571" level="INFO">${column-number} = 1</msg>
-<status status="PASS" endtime="20180708 19:27:57.572" starttime="20180708 19:27:57.570"></status>
+<msg timestamp="20180708 19:29:26.370" level="INFO">${column-number} = 1</msg>
+<status status="PASS" endtime="20180708 19:29:26.370" starttime="20180708 19:29:26.369"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.572" starttime="20180708 19:27:57.570"></status>
+<status status="PASS" endtime="20180708 19:29:26.370" starttime="20180708 19:29:26.369"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.572" starttime="20180708 19:27:57.569"></status>
+<status status="PASS" endtime="20180708 19:29:26.370" starttime="20180708 19:29:26.368"></status>
 </kw>
 <kw type="foritem" name="${y} = 2">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
@@ -116,8 +116,8 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.572" level="INFO">${header} = Browser</msg>
-<status status="PASS" endtime="20180708 19:27:57.572" starttime="20180708 19:27:57.572"></status>
+<msg timestamp="20180708 19:29:26.371" level="INFO">${header} = Browser</msg>
+<status status="PASS" endtime="20180708 19:29:26.371" starttime="20180708 19:29:26.370"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -127,19 +127,19 @@
 <arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.573" starttime="20180708 19:27:57.572"></status>
+<status status="PASS" endtime="20180708 19:29:26.371" starttime="20180708 19:29:26.371"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.573" starttime="20180708 19:27:57.572"></status>
+<status status="PASS" endtime="20180708 19:29:26.371" starttime="20180708 19:29:26.370"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.573" starttime="20180708 19:27:57.568"></status>
+<status status="PASS" endtime="20180708 19:29:26.371" starttime="20180708 19:29:26.366"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${column-number}</arg>
 </arguments>
-<msg timestamp="20180708 19:27:57.573" level="INFO">1</msg>
-<status status="PASS" endtime="20180708 19:27:57.573" starttime="20180708 19:27:57.573"></status>
+<msg timestamp="20180708 19:29:26.371" level="INFO">1</msg>
+<status status="PASS" endtime="20180708 19:29:26.372" starttime="20180708 19:29:26.371"></status>
 </kw>
 <kw name="Get Row Count" library="ExcelLibrary">
 <doc>Returns the specific number of rows of the sheet name specified.</doc>
@@ -149,8 +149,8 @@
 <assign>
 <var>${total-rows}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.573" level="INFO">${total-rows} = 5</msg>
-<status status="PASS" endtime="20180708 19:27:57.574" starttime="20180708 19:27:57.573"></status>
+<msg timestamp="20180708 19:29:26.372" level="INFO">${total-rows} = 5</msg>
+<status status="PASS" endtime="20180708 19:29:26.372" starttime="20180708 19:29:26.372"></status>
 </kw>
 <kw type="for" name="${row-number} IN RANGE [ 1 | ${total-rows}+1 ]">
 <kw type="foritem" name="${row-number} = 1">
@@ -164,8 +164,8 @@
 <assign>
 <var>${TC_Num}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.574" level="INFO">${TC_Num} = TC_01</msg>
-<status status="PASS" endtime="20180708 19:27:57.574" starttime="20180708 19:27:57.574"></status>
+<msg timestamp="20180708 19:29:26.373" level="INFO">${TC_Num} = TC_01</msg>
+<status status="PASS" endtime="20180708 19:29:26.373" starttime="20180708 19:29:26.372"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -179,8 +179,8 @@
 <assign>
 <var>${search-result}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.575" level="INFO">${search-result} = None</msg>
-<status status="PASS" endtime="20180708 19:27:57.575" starttime="20180708 19:27:57.574"></status>
+<msg timestamp="20180708 19:29:26.373" level="INFO">${search-result} = None</msg>
+<status status="PASS" endtime="20180708 19:29:26.373" starttime="20180708 19:29:26.373"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -188,9 +188,9 @@
 <arg>"${test-case-name}"=="${TC_Num}"</arg>
 <arg>Exit For Loop</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.575" starttime="20180708 19:27:57.575"></status>
+<status status="PASS" endtime="20180708 19:29:26.374" starttime="20180708 19:29:26.373"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.575" starttime="20180708 19:27:57.574"></status>
+<status status="PASS" endtime="20180708 19:29:26.374" starttime="20180708 19:29:26.372"></status>
 </kw>
 <kw type="foritem" name="${row-number} = 2">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
@@ -203,8 +203,8 @@
 <assign>
 <var>${TC_Num}</var>
 </assign>
-<msg timestamp="20180708 19:27:57.576" level="INFO">${TC_Num} = TC_02</msg>
-<status status="PASS" endtime="20180708 19:27:57.576" starttime="20180708 19:27:57.576"></status>
+<msg timestamp="20180708 19:29:26.374" level="INFO">${TC_Num} = TC_02</msg>
+<status status="PASS" endtime="20180708 19:29:26.374" starttime="20180708 19:29:26.374"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -225,10 +225,10 @@
 <arg>${column-number}</arg>
 <arg>${row-number}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.577" starttime="20180708 19:27:57.577"></status>
+<status status="PASS" endtime="20180708 19:29:26.375" starttime="20180708 19:29:26.375"></status>
 </kw>
-<msg timestamp="20180708 19:27:57.577" level="INFO">${search-result} = www.Google.com</msg>
-<status status="PASS" endtime="20180708 19:27:57.577" starttime="20180708 19:27:57.576"></status>
+<msg timestamp="20180708 19:29:26.375" level="INFO">${search-result} = www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:29:26.376" starttime="20180708 19:29:26.374"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -238,36 +238,36 @@
 </arguments>
 <kw name="Exit For Loop" library="BuiltIn">
 <doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20180708 19:27:57.578" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" endtime="20180708 19:27:57.578" starttime="20180708 19:27:57.578"></status>
+<msg timestamp="20180708 19:29:26.376" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20180708 19:29:26.376" starttime="20180708 19:29:26.376"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.578" starttime="20180708 19:27:57.577"></status>
+<status status="PASS" endtime="20180708 19:29:26.376" starttime="20180708 19:29:26.376"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.578" starttime="20180708 19:27:57.575"></status>
+<status status="PASS" endtime="20180708 19:29:26.376" starttime="20180708 19:29:26.374"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.578" starttime="20180708 19:27:57.574"></status>
+<status status="PASS" endtime="20180708 19:29:26.376" starttime="20180708 19:29:26.372"></status>
 </kw>
-<msg timestamp="20180708 19:27:57.578" level="INFO">${value} = www.Google.com</msg>
-<status status="PASS" endtime="20180708 19:27:57.578" starttime="20180708 19:27:57.566"></status>
+<msg timestamp="20180708 19:29:26.377" level="INFO">${value} = www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:29:26.377" starttime="20180708 19:29:26.365"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${value}</arg>
 </arguments>
-<msg timestamp="20180708 19:27:57.579" level="INFO">www.Google.com</msg>
-<status status="PASS" endtime="20180708 19:27:57.579" starttime="20180708 19:27:57.578"></status>
+<msg timestamp="20180708 19:29:26.378" level="INFO">www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:29:26.378" starttime="20180708 19:29:26.377"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>${value}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:27:57.579" starttime="20180708 19:27:57.579"></status>
+<status status="PASS" endtime="20180708 19:29:26.379" starttime="20180708 19:29:26.378"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:27:57.580" critical="yes" starttime="20180708 19:27:57.558"></status>
+<status status="PASS" endtime="20180708 19:29:26.380" critical="yes" starttime="20180708 19:29:26.356"></status>
 </test>
-<status status="PASS" endtime="20180708 19:27:57.581" starttime="20180708 19:27:57.245"></status>
+<status status="PASS" endtime="20180708 19:29:26.381" starttime="20180708 19:29:26.043"></status>
 </suite>
 <statistics>
 <total>

@@ -6,4 +6,13 @@ results/output.xml
 results\output.xml
 results/report.html
 results\report.html
+selenium-screenshot-*.pngresults/
+results/selenium-screenshot-*.pngresults/
+robot/results\
+robot/results/log.html
+robot/results\log.html
+robot/results/output.xml
+robot/results\output.xml
+robot/results/report.html
+robot/results\report.html
 selenium-screenshot-*.png
