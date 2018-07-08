@@ -1,276 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180708 19:10:32.571" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<robot generated="20180708 19:25:12.782" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
 <suite source="C:\Framework\robot\test_cases\read_from_excel.robot" id="s1" name="Read From Excel">
-<test id="s1-t1" name="TC_01_Taking URL from Excel">
+<test id="s1-t1" name="Get Value From Excel">
 <kw name="Open given Excel file">
 <arguments>
-<arg>${sFileName}</arg>
+<arg>${file-name}</arg>
 </arguments>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<arguments>
-<arg>OperatingSystem.File Should Exist</arg>
-<arg>${sFileName}</arg>
-</arguments>
-<assign>
-<var>${inputfileStatus}</var>
-<var>${msg}</var>
-</assign>
-<kw name="File Should Exist" library="OperatingSystem">
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<arguments>
-<arg>${sFileName}</arg>
-</arguments>
-<msg timestamp="20180708 19:10:32.887" html="yes" level="INFO">File '&lt;a href="file://C:\Framework\robot\test_cases\files\TestSheet.xls"&gt;C:\Framework\robot\test_cases\files\TestSheet.xls&lt;/a&gt;' exists.</msg>
-<status status="PASS" endtime="20180708 19:10:32.887" starttime="20180708 19:10:32.886"></status>
-</kw>
-<msg timestamp="20180708 19:10:32.887" level="INFO">${inputfileStatus} = PASS</msg>
-<msg timestamp="20180708 19:10:32.887" level="INFO">${msg} = None</msg>
-<status status="PASS" endtime="20180708 19:10:32.887" starttime="20180708 19:10:32.886"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>"${inputfileStatus}"=="PASS"</arg>
-<arg>info</arg>
-<arg>${sFileName} Test data file exist</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Cannot locate the given Excel file.</arg>
-</arguments>
-<kw name="Info" library="robot.api.logger">
-<doc>Writes the message to the log file using the ``INFO`` level.</doc>
-<arguments>
-<arg>${sFileName} Test data file exist</arg>
-</arguments>
-<msg timestamp="20180708 19:10:32.888" level="INFO">test_cases\files\TestSheet.xls Test data file exist</msg>
-<status status="PASS" endtime="20180708 19:10:32.888" starttime="20180708 19:10:32.888"></status>
-</kw>
-<status status="PASS" endtime="20180708 19:10:32.888" starttime="20180708 19:10:32.888"></status>
-</kw>
 <kw name="Open Excel" library="ExcelLibrary">
 <doc>Opens the Excel file from the path provided in the file name parameter.</doc>
 <arguments>
-<arg>${sFileName}</arg>
+<arg>${file-name}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:10:32.896" starttime="20180708 19:10:32.889"></status>
+<status status="PASS" endtime="20180708 19:25:13.106" starttime="20180708 19:25:13.099"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.896" starttime="20180708 19:10:32.885"></status>
+<status status="PASS" endtime="20180708 19:25:13.106" starttime="20180708 19:25:13.099"></status>
 </kw>
-<kw name="Get data from Excel with given column">
+<kw name="Sheet Name Test Case Name Column Name">
 <arguments>
 <arg>Data</arg>
-<arg>TC_01</arg>
+<arg>TC_02</arg>
 <arg>Url</arg>
 </arguments>
 <assign>
-<var>${sURL}</var>
+<var>${value}</var>
 </assign>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${sColumnName}</arg>
+<arg>${column-name}</arg>
 </arguments>
-<msg timestamp="20180708 19:10:32.897" level="INFO">Url</msg>
-<status status="PASS" endtime="20180708 19:10:32.897" starttime="20180708 19:10:32.897"></status>
+<msg timestamp="20180708 19:25:13.108" level="INFO">Url</msg>
+<status status="PASS" endtime="20180708 19:25:13.108" starttime="20180708 19:25:13.107"></status>
 </kw>
 <kw name="Get Column Count" library="ExcelLibrary">
 <doc>Returns the specific number of columns of the sheet name specified.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 </arguments>
 <assign>
-<var>${colCount}</var>
+<var>${column-count}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.898" level="INFO">${colCount} = 3</msg>
-<status status="PASS" endtime="20180708 19:10:32.898" starttime="20180708 19:10:32.897"></status>
+<msg timestamp="20180708 19:25:13.109" level="INFO">${column-count} = 3</msg>
+<status status="PASS" endtime="20180708 19:25:13.109" starttime="20180708 19:25:13.108"></status>
 </kw>
-<kw type="for" name="${y} IN RANGE [ 0 | ${colCount} ]">
+<kw type="for" name="${y} IN RANGE [ 0 | ${column-count} ]">
 <kw type="foritem" name="${y} = 0">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
 <doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 <arg>${y}</arg>
 <arg>0</arg>
 </arguments>
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.899" level="INFO">${header} = TestCase</msg>
-<status status="PASS" endtime="20180708 19:10:32.899" starttime="20180708 19:10:32.898"></status>
+<msg timestamp="20180708 19:25:13.109" level="INFO">${header} = TestCase</msg>
+<status status="PASS" endtime="20180708 19:25:13.109" starttime="20180708 19:25:13.109"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>"${header}"=="${sColumnName}"</arg>
+<arg>"${header}"=="${column-name}"</arg>
 <arg>Set Test Variable</arg>
-<arg>${colNum}</arg>
+<arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.899"></status>
+<status status="PASS" endtime="20180708 19:25:13.110" starttime="20180708 19:25:13.110"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.898"></status>
+<status status="PASS" endtime="20180708 19:25:13.110" starttime="20180708 19:25:13.109"></status>
 </kw>
 <kw type="foritem" name="${y} = 1">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
 <doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 <arg>${y}</arg>
 <arg>0</arg>
 </arguments>
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.900" level="INFO">${header} = Url</msg>
-<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.900"></status>
+<msg timestamp="20180708 19:25:13.111" level="INFO">${header} = Url</msg>
+<status status="PASS" endtime="20180708 19:25:13.111" starttime="20180708 19:25:13.110"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>"${header}"=="${sColumnName}"</arg>
+<arg>"${header}"=="${column-name}"</arg>
 <arg>Set Test Variable</arg>
-<arg>${colNum}</arg>
+<arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
-<arg>${colNum}</arg>
+<arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<msg timestamp="20180708 19:10:32.902" level="INFO">${colNum} = 1</msg>
-<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.901"></status>
+<msg timestamp="20180708 19:25:13.112" level="INFO">${column-number} = 1</msg>
+<status status="PASS" endtime="20180708 19:25:13.112" starttime="20180708 19:25:13.111"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.901"></status>
+<status status="PASS" endtime="20180708 19:25:13.113" starttime="20180708 19:25:13.111"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.900"></status>
+<status status="PASS" endtime="20180708 19:25:13.113" starttime="20180708 19:25:13.110"></status>
 </kw>
 <kw type="foritem" name="${y} = 2">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
 <doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 <arg>${y}</arg>
 <arg>0</arg>
 </arguments>
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.903" level="INFO">${header} = Browser</msg>
-<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.902"></status>
+<msg timestamp="20180708 19:25:13.113" level="INFO">${header} = Browser</msg>
+<status status="PASS" endtime="20180708 19:25:13.113" starttime="20180708 19:25:13.113"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>"${header}"=="${sColumnName}"</arg>
+<arg>"${header}"=="${column-name}"</arg>
 <arg>Set Test Variable</arg>
-<arg>${colNum}</arg>
+<arg>${column-number}</arg>
 <arg>${y}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.903"></status>
+<status status="PASS" endtime="20180708 19:25:13.114" starttime="20180708 19:25:13.113"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.902"></status>
+<status status="PASS" endtime="20180708 19:25:13.114" starttime="20180708 19:25:13.113"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.898"></status>
+<status status="PASS" endtime="20180708 19:25:13.114" starttime="20180708 19:25:13.109"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${colNum}</arg>
+<arg>${column-number}</arg>
 </arguments>
-<msg timestamp="20180708 19:10:32.904" level="INFO">1</msg>
-<status status="PASS" endtime="20180708 19:10:32.904" starttime="20180708 19:10:32.903"></status>
+<msg timestamp="20180708 19:25:13.114" level="INFO">1</msg>
+<status status="PASS" endtime="20180708 19:25:13.114" starttime="20180708 19:25:13.114"></status>
 </kw>
 <kw name="Get Row Count" library="ExcelLibrary">
 <doc>Returns the specific number of rows of the sheet name specified.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 </arguments>
 <assign>
-<var>${iTotalRows}</var>
+<var>${total-rows}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.904" level="INFO">${iTotalRows} = 5</msg>
-<status status="PASS" endtime="20180708 19:10:32.904" starttime="20180708 19:10:32.904"></status>
+<msg timestamp="20180708 19:25:13.115" level="INFO">${total-rows} = 5</msg>
+<status status="PASS" endtime="20180708 19:25:13.115" starttime="20180708 19:25:13.114"></status>
 </kw>
-<kw type="for" name="${iRowNo} IN RANGE [ 1 | ${iTotalRows}+1 ]">
-<kw type="foritem" name="${iRowNo} = 1">
+<kw type="for" name="${row-number} IN RANGE [ 1 | ${total-rows}+1 ]">
+<kw type="foritem" name="${row-number} = 1">
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
 <doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
+<arg>${sheet-name}</arg>
 <arg>0</arg>
-<arg>${iRowNo}</arg>
+<arg>${row-number}</arg>
 </arguments>
 <assign>
 <var>${TC_Num}</var>
 </assign>
-<msg timestamp="20180708 19:10:32.907" level="INFO">${TC_Num} = TC_01</msg>
-<status status="PASS" endtime="20180708 19:10:32.908" starttime="20180708 19:10:32.906"></status>
+<msg timestamp="20180708 19:25:13.116" level="INFO">${TC_Num} = TC_01</msg>
+<status status="PASS" endtime="20180708 19:25:13.116" starttime="20180708 19:25:13.115"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>"${sTestCaseNo}"=="${TC_Num}"</arg>
-<arg>ExcelLibrary.Read Cell Data By Coordinates</arg>
-<arg>${sSheetName}</arg>
-<arg>${colNum}</arg>
-<arg>${iRowNo}</arg>
+<arg>"${test-case-name}"=="${TC_Num}"</arg>
+<arg>Read Cell Data By Coordinates</arg>
+<arg>${sheet-name}</arg>
+<arg>${column-number}</arg>
+<arg>${row-number}</arg>
 </arguments>
 <assign>
-<var>${sSearchedData}</var>
+<var>${search-result}</var>
+</assign>
+<msg timestamp="20180708 19:25:13.116" level="INFO">${search-result} = None</msg>
+<status status="PASS" endtime="20180708 19:25:13.116" starttime="20180708 19:25:13.116"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${test-case-name}"=="${TC_Num}"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20180708 19:25:13.117" starttime="20180708 19:25:13.116"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:25:13.117" starttime="20180708 19:25:13.115"></status>
+</kw>
+<kw type="foritem" name="${row-number} = 2">
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
+<arguments>
+<arg>${sheet-name}</arg>
+<arg>0</arg>
+<arg>${row-number}</arg>
+</arguments>
+<assign>
+<var>${TC_Num}</var>
+</assign>
+<msg timestamp="20180708 19:25:13.117" level="INFO">${TC_Num} = TC_02</msg>
+<status status="PASS" endtime="20180708 19:25:13.117" starttime="20180708 19:25:13.117"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${test-case-name}"=="${TC_Num}"</arg>
+<arg>Read Cell Data By Coordinates</arg>
+<arg>${sheet-name}</arg>
+<arg>${column-number}</arg>
+<arg>${row-number}</arg>
+</arguments>
+<assign>
+<var>${search-result}</var>
 </assign>
 <kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
 <doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${sSheetName}</arg>
-<arg>${colNum}</arg>
-<arg>${iRowNo}</arg>
+<arg>${sheet-name}</arg>
+<arg>${column-number}</arg>
+<arg>${row-number}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:10:32.910" starttime="20180708 19:10:32.909"></status>
+<status status="PASS" endtime="20180708 19:25:13.118" starttime="20180708 19:25:13.118"></status>
 </kw>
-<msg timestamp="20180708 19:10:32.910" level="INFO">${sSearchedData} = www.Google.ca</msg>
-<status status="PASS" endtime="20180708 19:10:32.910" starttime="20180708 19:10:32.909"></status>
+<msg timestamp="20180708 19:25:13.118" level="INFO">${search-result} = www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:25:13.118" starttime="20180708 19:25:13.117"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>"${sTestCaseNo}"=="${TC_Num}"</arg>
+<arg>"${test-case-name}"=="${TC_Num}"</arg>
 <arg>Exit For Loop</arg>
 </arguments>
 <kw name="Exit For Loop" library="BuiltIn">
 <doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20180708 19:10:32.911" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.911"></status>
+<msg timestamp="20180708 19:25:13.119" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20180708 19:25:13.119" starttime="20180708 19:25:13.119"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.910"></status>
+<status status="PASS" endtime="20180708 19:25:13.119" starttime="20180708 19:25:13.119"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.906"></status>
+<status status="PASS" endtime="20180708 19:25:13.119" starttime="20180708 19:25:13.117"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.905"></status>
+<status status="PASS" endtime="20180708 19:25:13.119" starttime="20180708 19:25:13.115"></status>
 </kw>
-<msg timestamp="20180708 19:10:32.911" level="INFO">${sURL} = www.Google.ca</msg>
-<status status="PASS" endtime="20180708 19:10:32.912" starttime="20180708 19:10:32.896"></status>
+<msg timestamp="20180708 19:25:13.120" level="INFO">${value} = www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:25:13.120" starttime="20180708 19:25:13.107"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${sURL}</arg>
+<arg>${value}</arg>
 </arguments>
-<msg timestamp="20180708 19:10:32.913" level="INFO">www.Google.ca</msg>
-<status status="PASS" endtime="20180708 19:10:32.914" starttime="20180708 19:10:32.913"></status>
+<msg timestamp="20180708 19:25:13.120" level="INFO">www.Google.com</msg>
+<status status="PASS" endtime="20180708 19:25:13.120" starttime="20180708 19:25:13.120"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>${sURL}</arg>
+<arg>${value}</arg>
 </arguments>
-<status status="PASS" endtime="20180708 19:10:32.915" starttime="20180708 19:10:32.914"></status>
+<status status="PASS" endtime="20180708 19:25:13.121" starttime="20180708 19:25:13.120"></status>
 </kw>
-<status status="PASS" endtime="20180708 19:10:32.916" critical="yes" starttime="20180708 19:10:32.885"></status>
+<status status="PASS" endtime="20180708 19:25:13.121" critical="yes" starttime="20180708 19:25:13.098"></status>
 </test>
-<status status="PASS" endtime="20180708 19:10:32.918" starttime="20180708 19:10:32.574"></status>
+<status status="PASS" endtime="20180708 19:25:13.122" starttime="20180708 19:25:12.786"></status>
 </suite>
 <statistics>
 <total>
