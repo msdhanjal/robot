@@ -1,353 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180705 08:44:56.564" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
-<suite source="/Users/mdhanjal/devqa/robot/test_cases/create_l2_customer.robot" id="s1" name="Create L2 Customer">
-<test id="s1-t1" name="Create L2 Customer">
-<kw name="Setup">
-<kw name="Generate Random String" library="String">
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<robot generated="20180708 19:10:32.571" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Framework\robot\test_cases\read_from_excel.robot" id="s1" name="Read From Excel">
+<test id="s1-t1" name="TC_01_Taking URL from Excel">
+<kw name="Open given Excel file">
 <arguments>
-<arg>6</arg>
-<arg>[UPPER][NUMBERS]</arg>
+<arg>${sFileName}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>OperatingSystem.File Should Exist</arg>
+<arg>${sFileName}</arg>
 </arguments>
 <assign>
-<var>${r}</var>
+<var>${inputfileStatus}</var>
+<var>${msg}</var>
 </assign>
-<msg timestamp="20180705 08:44:57.006" level="INFO">${r} = EBVJ6C</msg>
-<status status="PASS" endtime="20180705 08:44:57.006" starttime="20180705 08:44:57.005"></status>
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${sFileName}</arg>
+</arguments>
+<msg timestamp="20180708 19:10:32.887" html="yes" level="INFO">File '&lt;a href="file://C:\Framework\robot\test_cases\files\TestSheet.xls"&gt;C:\Framework\robot\test_cases\files\TestSheet.xls&lt;/a&gt;' exists.</msg>
+<status status="PASS" endtime="20180708 19:10:32.887" starttime="20180708 19:10:32.886"></status>
 </kw>
+<msg timestamp="20180708 19:10:32.887" level="INFO">${inputfileStatus} = PASS</msg>
+<msg timestamp="20180708 19:10:32.887" level="INFO">${msg} = None</msg>
+<status status="PASS" endtime="20180708 19:10:32.887" starttime="20180708 19:10:32.886"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${inputfileStatus}"=="PASS"</arg>
+<arg>info</arg>
+<arg>${sFileName} Test data file exist</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Cannot locate the given Excel file.</arg>
+</arguments>
+<kw name="Info" library="robot.api.logger">
+<doc>Writes the message to the log file using the ``INFO`` level.</doc>
+<arguments>
+<arg>${sFileName} Test data file exist</arg>
+</arguments>
+<msg timestamp="20180708 19:10:32.888" level="INFO">test_cases\files\TestSheet.xls Test data file exist</msg>
+<status status="PASS" endtime="20180708 19:10:32.888" starttime="20180708 19:10:32.888"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.888" starttime="20180708 19:10:32.888"></status>
+</kw>
+<kw name="Open Excel" library="ExcelLibrary">
+<doc>Opens the Excel file from the path provided in the file name parameter.</doc>
+<arguments>
+<arg>${sFileName}</arg>
+</arguments>
+<status status="PASS" endtime="20180708 19:10:32.896" starttime="20180708 19:10:32.889"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.896" starttime="20180708 19:10:32.885"></status>
+</kw>
+<kw name="Get data from Excel with given column">
+<arguments>
+<arg>Data</arg>
+<arg>TC_01</arg>
+<arg>Url</arg>
+</arguments>
+<assign>
+<var>${sURL}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${sColumnName}</arg>
+</arguments>
+<msg timestamp="20180708 19:10:32.897" level="INFO">Url</msg>
+<status status="PASS" endtime="20180708 19:10:32.897" starttime="20180708 19:10:32.897"></status>
+</kw>
+<kw name="Get Column Count" library="ExcelLibrary">
+<doc>Returns the specific number of columns of the sheet name specified.</doc>
+<arguments>
+<arg>${sSheetName}</arg>
+</arguments>
+<assign>
+<var>${colCount}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.898" level="INFO">${colCount} = 3</msg>
+<status status="PASS" endtime="20180708 19:10:32.898" starttime="20180708 19:10:32.897"></status>
+</kw>
+<kw type="for" name="${y} IN RANGE [ 0 | ${colCount} ]">
+<kw type="foritem" name="${y} = 0">
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
+<arguments>
+<arg>${sSheetName}</arg>
+<arg>${y}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.899" level="INFO">${header} = TestCase</msg>
+<status status="PASS" endtime="20180708 19:10:32.899" starttime="20180708 19:10:32.898"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${header}"=="${sColumnName}"</arg>
+<arg>Set Test Variable</arg>
+<arg>${colNum}</arg>
+<arg>${y}</arg>
+</arguments>
+<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.899"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.898"></status>
+</kw>
+<kw type="foritem" name="${y} = 1">
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
+<arguments>
+<arg>${sSheetName}</arg>
+<arg>${y}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.900" level="INFO">${header} = Url</msg>
+<status status="PASS" endtime="20180708 19:10:32.900" starttime="20180708 19:10:32.900"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${header}"=="${sColumnName}"</arg>
+<arg>Set Test Variable</arg>
+<arg>${colNum}</arg>
+<arg>${y}</arg>
+</arguments>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
-<arg>${random}</arg>
-<arg>${r}</arg>
+<arg>${colNum}</arg>
+<arg>${y}</arg>
 </arguments>
-<msg timestamp="20180705 08:44:57.006" level="INFO">${random} = EBVJ6C</msg>
-<status status="PASS" endtime="20180705 08:44:57.006" starttime="20180705 08:44:57.006"></status>
+<msg timestamp="20180708 19:10:32.902" level="INFO">${colNum} = 1</msg>
+<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.901"></status>
 </kw>
-<status status="PASS" endtime="20180705 08:44:57.007" starttime="20180705 08:44:57.005"></status>
+<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.901"></status>
 </kw>
-<kw name="Open Environment" library="portal_common_keywords">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<status status="PASS" endtime="20180708 19:10:32.902" starttime="20180708 19:10:32.900"></status>
+</kw>
+<kw type="foritem" name="${y} = 2">
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${env}</arg>
-<arg>${browser}</arg>
+<arg>${sSheetName}</arg>
+<arg>${y}</arg>
+<arg>0</arg>
 </arguments>
-<msg timestamp="20180705 08:44:57.007" level="INFO">Opening browser 'chrome' to base url 'https://qa-web2.dev.coredial.com/login'.</msg>
-<status status="PASS" endtime="20180705 08:44:59.582" starttime="20180705 08:44:57.007"></status>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.903" level="INFO">${header} = Browser</msg>
+<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.902"></status>
 </kw>
-<status status="PASS" endtime="20180705 08:44:59.583" starttime="20180705 08:44:57.007"></status>
-</kw>
-<kw name="Portal Login Page Should Be Loaded" library="portal_login_page">
-<doc>Check if the login page is loaded and ready to use</doc>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${PLP_LOCATORS.login_button}</arg>
+<arg>"${header}"=="${sColumnName}"</arg>
+<arg>Set Test Variable</arg>
+<arg>${colNum}</arg>
+<arg>${y}</arg>
 </arguments>
-<status status="PASS" endtime="20180705 08:44:59.622" starttime="20180705 08:44:59.584"></status>
+<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.903"></status>
 </kw>
-<kw name="Location Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current URL contains ``expected``.</doc>
+<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.902"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.903" starttime="20180708 19:10:32.898"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>/login</arg>
+<arg>${colNum}</arg>
 </arguments>
-<msg timestamp="20180705 08:44:59.628" level="INFO">Current location contains '/login'.</msg>
-<status status="PASS" endtime="20180705 08:44:59.628" starttime="20180705 08:44:59.622"></status>
+<msg timestamp="20180708 19:10:32.904" level="INFO">1</msg>
+<status status="PASS" endtime="20180708 19:10:32.904" starttime="20180708 19:10:32.903"></status>
 </kw>
-<status status="PASS" endtime="20180705 08:44:59.628" starttime="20180705 08:44:59.584"></status>
-</kw>
-<kw name="Login With Credentials" library="portal_login_page">
+<kw name="Get Row Count" library="ExcelLibrary">
+<doc>Returns the specific number of rows of the sheet name specified.</doc>
 <arguments>
-<arg>admin</arg>
-<arg>Password1</arg>
+<arg>${sSheetName}</arg>
 </arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<assign>
+<var>${iTotalRows}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.904" level="INFO">${iTotalRows} = 5</msg>
+<status status="PASS" endtime="20180708 19:10:32.904" starttime="20180708 19:10:32.904"></status>
+</kw>
+<kw type="for" name="${iRowNo} IN RANGE [ 1 | ${iTotalRows}+1 ]">
+<kw type="foritem" name="${iRowNo} = 1">
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${PLP_LOCATORS.username}</arg>
-<arg>${username}</arg>
+<arg>${sSheetName}</arg>
+<arg>0</arg>
+<arg>${iRowNo}</arg>
 </arguments>
-<msg timestamp="20180705 08:44:59.629" level="INFO">Typing text 'admin' into text field 'username'.</msg>
-<status status="PASS" endtime="20180705 08:44:59.714" starttime="20180705 08:44:59.629"></status>
+<assign>
+<var>${TC_Num}</var>
+</assign>
+<msg timestamp="20180708 19:10:32.907" level="INFO">${TC_Num} = TC_01</msg>
+<status status="PASS" endtime="20180708 19:10:32.908" starttime="20180708 19:10:32.906"></status>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${PLP_LOCATORS.password}</arg>
-<arg>${password}</arg>
+<arg>"${sTestCaseNo}"=="${TC_Num}"</arg>
+<arg>ExcelLibrary.Read Cell Data By Coordinates</arg>
+<arg>${sSheetName}</arg>
+<arg>${colNum}</arg>
+<arg>${iRowNo}</arg>
 </arguments>
-<msg timestamp="20180705 08:44:59.715" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
-<status status="PASS" endtime="20180705 08:44:59.811" starttime="20180705 08:44:59.715"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
+<assign>
+<var>${sSearchedData}</var>
+</assign>
+<kw name="Read Cell Data By Coordinates" library="ExcelLibrary">
+<doc>Uses the column and row to return the data from that cell.</doc>
 <arguments>
-<arg>${PLP_LOCATORS.login_button}</arg>
+<arg>${sSheetName}</arg>
+<arg>${colNum}</arg>
+<arg>${iRowNo}</arg>
 </arguments>
-<msg timestamp="20180705 08:44:59.812" level="INFO">Clicking element '//button[text()='Sign In']'.</msg>
-<status status="PASS" endtime="20180705 08:45:02.031" starttime="20180705 08:44:59.811"></status>
+<status status="PASS" endtime="20180708 19:10:32.910" starttime="20180708 19:10:32.909"></status>
 </kw>
-<status status="PASS" endtime="20180705 08:45:02.031" starttime="20180705 08:44:59.628"></status>
+<msg timestamp="20180708 19:10:32.910" level="INFO">${sSearchedData} = www.Google.ca</msg>
+<status status="PASS" endtime="20180708 19:10:32.910" starttime="20180708 19:10:32.909"></status>
 </kw>
-<kw name="Portal Home Page Should Be Loaded" library="portal_home_page">
-<doc>Check if the portal home page is loaded and ready to use</doc>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${PHP_LOCATORS.home_tab}</arg>
+<arg>"${sTestCaseNo}"=="${TC_Num}"</arg>
+<arg>Exit For Loop</arg>
 </arguments>
-<status status="PASS" endtime="20180705 08:45:02.071" starttime="20180705 08:45:02.032"></status>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20180708 19:10:32.911" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.911"></status>
 </kw>
-<kw name="Location Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current URL contains ``expected``.</doc>
+<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.910"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.906"></status>
+</kw>
+<status status="PASS" endtime="20180708 19:10:32.911" starttime="20180708 19:10:32.905"></status>
+</kw>
+<msg timestamp="20180708 19:10:32.911" level="INFO">${sURL} = www.Google.ca</msg>
+<status status="PASS" endtime="20180708 19:10:32.912" starttime="20180708 19:10:32.896"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>coredial.com</arg>
+<arg>${sURL}</arg>
 </arguments>
-<msg timestamp="20180705 08:45:02.074" level="INFO">Current location contains 'coredial.com'.</msg>
-<status status="PASS" endtime="20180705 08:45:02.074" starttime="20180705 08:45:02.071"></status>
+<msg timestamp="20180708 19:10:32.913" level="INFO">www.Google.ca</msg>
+<status status="PASS" endtime="20180708 19:10:32.914" starttime="20180708 19:10:32.913"></status>
 </kw>
-<status status="PASS" endtime="20180705 08:45:02.074" starttime="20180705 08:45:02.031"></status>
-</kw>
-<kw name="Go To Settings" library="portal_home_page">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>${PHP_LOCATORS.settings_tab}</arg>
+<arg>${sURL}</arg>
 </arguments>
-<status status="PASS" endtime="20180705 08:45:02.108" starttime="20180705 08:45:02.075"></status>
+<status status="PASS" endtime="20180708 19:10:32.915" starttime="20180708 19:10:32.914"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${PHP_LOCATORS.settings_tab}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:02.109" level="INFO">Clicking element '//a[text()='Settings']'.</msg>
-<status status="PASS" endtime="20180705 08:45:05.396" starttime="20180705 08:45:02.109"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:05.396" starttime="20180705 08:45:02.075"></status>
-</kw>
-<kw name="Portal Settings Page Should Be Loaded" library="portal_settings_page">
-<doc>Check if the portal settings page is loaded and ready to use</doc>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PSP_LOCATORS.selected_settings_header}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:05.433" starttime="20180705 08:45:05.397"></status>
-</kw>
-<kw name="Location Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current URL contains ``expected``.</doc>
-<arguments>
-<arg>/setting</arg>
-</arguments>
-<msg timestamp="20180705 08:45:05.437" level="INFO">Current location contains '/setting'.</msg>
-<status status="PASS" endtime="20180705 08:45:05.437" starttime="20180705 08:45:05.433"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:05.437" starttime="20180705 08:45:05.396"></status>
-</kw>
-<kw name="Click Manage Users Tab" library="portal_settings_page">
-<doc>Clicks the Manage Users Tab</doc>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PSP_LOCATORS.manage_users_tab}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:05.466" starttime="20180705 08:45:05.438"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${PSP_LOCATORS.manage_users_tab}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:05.467" level="INFO">Clicking element '//span[text()='Manage Users']'.</msg>
-<status status="PASS" endtime="20180705 08:45:07.445" starttime="20180705 08:45:05.466"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:07.445" starttime="20180705 08:45:05.437"></status>
-</kw>
-<kw name="Click New User Button" library="portal_settings_page">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PSP_LOCATORS.new_user_button}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:07.505" starttime="20180705 08:45:07.446"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${PSP_LOCATORS.new_user_button}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:07.506" level="INFO">Clicking element '(//a[text()='New User'])[1]'.</msg>
-<status status="PASS" endtime="20180705 08:45:10.536" starttime="20180705 08:45:07.506"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:10.536" starttime="20180705 08:45:07.445"></status>
-</kw>
-<kw name="New User Edit Page Should Be Loaded" library="portal_new_user_edit_page">
-<doc>Check if the new user edit page is loaded and ready to use</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.new_user_header}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:10.577" starttime="20180705 08:45:10.537"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:10.578" starttime="20180705 08:45:10.536"></status>
-</kw>
-<kw name="Input First Name" library="portal_new_user_edit_page">
-<arguments>
-<arg>Robot+${random}</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.first_name_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:10.612" starttime="20180705 08:45:10.579"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.first_name_field}</arg>
-<arg>${first-name}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:10.613" level="INFO">Typing text 'Robot+EBVJ6C' into text field 'firstName'.</msg>
-<status status="PASS" endtime="20180705 08:45:10.791" starttime="20180705 08:45:10.613"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:10.792" starttime="20180705 08:45:10.578"></status>
-</kw>
-<kw name="Input Last Name" library="portal_new_user_edit_page">
-<arguments>
-<arg>Test+${random}</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.last_name_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:10.828" starttime="20180705 08:45:10.793"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.last_name_field}</arg>
-<arg>${last-name}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:10.828" level="INFO">Typing text 'Test+EBVJ6C' into text field 'lastName'.</msg>
-<status status="PASS" endtime="20180705 08:45:10.984" starttime="20180705 08:45:10.828"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:10.984" starttime="20180705 08:45:10.792"></status>
-</kw>
-<kw name="Input User Name" library="portal_new_user_edit_page">
-<arguments>
-<arg>robotuser+${random}</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.user_name_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:11.019" starttime="20180705 08:45:10.985"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.user_name_field}</arg>
-<arg>${user-name}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:11.020" level="INFO">Typing text 'robotuser+EBVJ6C' into text field 'username'.</msg>
-<status status="PASS" endtime="20180705 08:45:11.244" starttime="20180705 08:45:11.019"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:11.244" starttime="20180705 08:45:10.984"></status>
-</kw>
-<kw name="Input Password" library="portal_new_user_edit_page">
-<arguments>
-<arg>Password1</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.password_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:11.273" starttime="20180705 08:45:11.245"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.password_field}</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:11.274" level="INFO">Typing text 'Password1' into text field 'password'.</msg>
-<status status="PASS" endtime="20180705 08:45:11.408" starttime="20180705 08:45:11.273"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:11.408" starttime="20180705 08:45:11.245"></status>
-</kw>
-<kw name="Input Confirm Password" library="portal_new_user_edit_page">
-<arguments>
-<arg>Password1</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.confirm_password_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:11.444" starttime="20180705 08:45:11.409"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.confirm_password_field}</arg>
-<arg>${confirm-password}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:11.444" level="INFO">Typing text 'Password1' into text field 'confirmPassword'.</msg>
-<status status="PASS" endtime="20180705 08:45:11.576" starttime="20180705 08:45:11.444"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:11.576" starttime="20180705 08:45:11.408"></status>
-</kw>
-<kw name="Input Email" library="portal_new_user_edit_page">
-<arguments>
-<arg>robottest+${random}@coredial.com</arg>
-</arguments>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.email_field}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:11.615" starttime="20180705 08:45:11.577"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.email_field}</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:11.616" level="INFO">Typing text 'robottest+EBVJ6C@coredial.com' into text field 'email'.</msg>
-<status status="PASS" endtime="20180705 08:45:11.924" starttime="20180705 08:45:11.615"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:11.924" starttime="20180705 08:45:11.576"></status>
-</kw>
-<kw name="Click Save Button" library="portal_new_user_edit_page">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.save_button}</arg>
-</arguments>
-<status status="PASS" endtime="20180705 08:45:11.953" starttime="20180705 08:45:11.925"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${PNUP_LOCATORS.save_button}</arg>
-</arguments>
-<msg timestamp="20180705 08:45:11.954" level="INFO">Clicking element '(//button[@value='Save'])[1]'.</msg>
-<status status="PASS" endtime="20180705 08:45:14.379" starttime="20180705 08:45:11.953"></status>
-</kw>
-<status status="PASS" endtime="20180705 08:45:14.380" starttime="20180705 08:45:11.924"></status>
-</kw>
-<doc>Login as the admin and create a L2 customer</doc>
-<status status="PASS" endtime="20180705 08:45:14.380" critical="yes" starttime="20180705 08:44:57.004"></status>
+<status status="PASS" endtime="20180708 19:10:32.916" critical="yes" starttime="20180708 19:10:32.885"></status>
 </test>
-<status status="PASS" endtime="20180705 08:45:14.381" starttime="20180705 08:44:56.566"></status>
+<status status="PASS" endtime="20180708 19:10:32.918" starttime="20180708 19:10:32.574"></status>
 </suite>
 <statistics>
 <total>
@@ -357,7 +280,7 @@
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Create L2 Customer" pass="1">Create L2 Customer</stat>
+<stat fail="0" id="s1" name="Read From Excel" pass="1">Read From Excel</stat>
 </suite>
 </statistics>
 <errors>
