@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${env}=             https://qa-web2.dev.coredial.com/login
-${qa}=              https://qa-web2.dev.coredial.com/login
+${qa}=              https://qa-web3.dev.coredial.com/login
 ${admin-qa}=        https://qa-web.dev.coredial.com/login
 ${uat}=             https://uat-web2.dev.coredial.com/login
 ${admin-uat}=       https://uat-web.dev.coredial.com/login
