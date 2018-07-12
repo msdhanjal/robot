@@ -1,4 +1,4 @@
-results/selenium-screenshot-*.pngresults/
+results/selenium-screenshot-*.png
 results/report.html
 results/log.html
 results/output.xml
