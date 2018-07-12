@@ -17,7 +17,7 @@ Meeting Test
     Handle First Time Tutorial
     Click Meeting Icon
     Click Start My Meeting Button
-    Wait Until Keyword Succeeds    10s    Select Window    NEW    10s
+    Wait Until Keyword Succeeds    10s    2s    Select Window    NEW
     
     # Handle Alert    Allow
     Wait Until Element Is Visible    //div[@class='enter-meeting']//button[contains(text(), 'Enter Meeting')]    10s
