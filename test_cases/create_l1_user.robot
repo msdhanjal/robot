@@ -14,8 +14,7 @@ ${random}    ${EMPTY}
 Create L1 User
     [Documentation]    Login as the admin and create a L4 User
     Setup
-    # Open Stage2 Admin Environment
-    Open Qa Admin Environment
+    Open Environment    qa    web
     Portal Login Page Should Be Loaded
     Login With Credentials    admin    Password1
     Portal Home Page Should Be Loaded

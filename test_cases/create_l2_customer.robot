@@ -14,7 +14,7 @@ ${random}    ${EMPTY}
 Create L2 Customer
     [Documentation]    Login as the admin and create a L2 customer
     Setup
-    Open Environment
+    Open Environment    uat    web2
     Portal Login Page Should Be Loaded
     Login With Credentials    admin    Password1
     Portal Home Page Should Be Loaded

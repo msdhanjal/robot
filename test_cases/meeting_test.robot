@@ -11,7 +11,7 @@ ${random}    ${EMPTY}
 
 *** Test Cases ***
 Meeting Test
-    Open Qa Environment
+    Open Environment    qa    web2
     Portal Login Page Should Be Loaded
     Login With Credentials    account32080229    Password1
     Handle First Time Tutorial
