@@ -5,12 +5,12 @@ Library           robot.api.logger
 Library           Selenium2Library
 
 *** Variables ***
-${file-name}      test_cases\\files\\TestSheet.xls
+${file-name}    test_cases/files/TestSheet.xls
 
 *** Test Cases ***
 Get Value From Excel
     Open given Excel file    ${file-name}
-    ${value}=    Sheet Name Test Case Name Column Name    Data    TC_02    Url
+    ${value}=    Sheet Name Test Case Name Column Name    Data    TC_02    Browser
     Log    ${value}
     Log To Console    ${value}
 
