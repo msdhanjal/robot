@@ -10,13 +10,17 @@ ${file-name}    test_cases/files/TestSheet.xls
 *** Test Cases ***
 Get Value From Excel
     Open given Excel file    ${file-name}
-    ${test1}=    Read Cell Data By Coordinates    Data    2    3
-    :FOR    ${INDEX}    IN RANGE    1    5
-    \    ${test2}=    Read Cell Data By Name    Data    A${INDEX}
-    \    Log To Console    ${test2}
+    
+    ${test1}=    Read Cell Data By Coordinates    Data    1    5
+
+    # :FOR    ${INDEX}    IN RANGE    1    5
+    # \    ${test2}=    Read Cell Data By Name    Data    A${INDEX}
+    # \    Log To Console    ${test2}
+
     #${test2}=    Read Cell Data By Name    Data    A2
+    ${test3}=    Get Row Values    Data    5
     #${value}=    Sheet Name Test Case Name Column Name    Data    TC_02    Browser
-    #Log To Console    ${test2}
+    Log To Console    ${test1}
     #Log To Console    ${value}
 
 *** Keywords ***
