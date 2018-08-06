@@ -18,7 +18,7 @@ Create L1 User
     Portal Login Page Should Be Loaded
     Login With Credentials    admin    Password1
     Portal Home Page Should Be Loaded
-    Go To Settings
+    Click On Settings Tab
     Portal Settings Page Should Be Loaded
     Click Manage Users Tab
     Click New User Button
