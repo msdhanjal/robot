@@ -11,14 +11,14 @@ ${random}    ${EMPTY}
 
 *** Test Cases ***
 Meeting Test
-    Open Environment    qa    web2
+    Open Environment    uat    web2
     Portal Login Page Should Be Loaded
-    Login With Credentials    account32080229    Password1
+    Login With Credentials    bob1    Password1
     Handle First Time Tutorial
     Click Meeting Icon
     Click Start My Meeting Button
     Wait Until Keyword Succeeds    10s    2s    Select Window    NEW
     
-    # Handle Alert    Allow
+    #Handle Alert    Allow
     Wait Until Element Is Visible    //div[@class='enter-meeting']//button[contains(text(), 'Enter Meeting')]    10s
     Click Element    //div[@class='enter-meeting']//button[contains(text(), 'Enter Meeting')]

@@ -22,7 +22,7 @@ Click On Service Providers Tab
     Wait Until Element Is Enabled    ${PHP_LOCATORS.service_providers_tab}
     Click Element    ${PHP_LOCATORS.service_providers_tab}
 
-User Should Be On L2 Level   
+User Should Be On L2 Level For
     [Arguments]    ${name}
     ${l2_name}=    Replace String    ${PHP_LOCATORS.l2_level_breadcrumb}    __L2-SP__    ${name}
     Wait Until Element Is Visible    ${l2_name}

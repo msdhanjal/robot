@@ -9,11 +9,12 @@ Library           SeleniumLibrary
 Library           String
 
 *** Variables ***
-${random}    ${EMPTY}
+${random}       ${EMPTY}
+${sp}=          Astrsk_Broad 82104634
 
 *** Test Cases ***
-Create L2 Customer
-    [Documentation]    Login as the admin and create a L2 customer
+Create L2 User
+    [Documentation]    Login as the admin and create a L2 user
     Setup
     Open Environment    uat    web
     Portal Login Page Should Be Loaded
@@ -21,10 +22,23 @@ Create L2 Customer
     Portal Home Page Should Be Loaded
     Click On Service Providers Tab
     Service Providers Search Page Should Be Loaded
-    Search For    Asterisk reseller
-    Search Results Should Contain    Asterisk reseller
-    Click Search Result    Asterisk reseller
-    User Should Be On L2 Level    Asterisk reseller
+    Search For    ${sp}
+    Search Results Should Contain    ${sp}
+    Click Search Result    ${sp}
+    User Should Be On L2 Level For    ${sp}
+    Click On Settings Tab
+    Portal Settings Page Should Be Loaded
+    Click Manage Users Tab
+    Click New User Button
+    New User Edit Page Should Be Loaded
+    Input First Name    Robot+${random}
+    Input Last Name    Test+${random}
+    Input User Name    robotuser+${random}
+    Input Password    Password1
+    Input Confirm Password    Password1
+    Input Email    robottest+${random}@coredial.com
+    #Click Save Button
+    Close All Browsers
     
 *** Keywords ***
 Setup

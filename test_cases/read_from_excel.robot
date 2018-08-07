@@ -22,6 +22,7 @@ Get Value From Excel
     #${value}=    Sheet Name Test Case Name Column Name    Data    TC_02    Browser
     Log To Console    ${test1}
     #Log To Console    ${value}
+    Close All Browsers
 
 *** Keywords ***
 Open given Excel file

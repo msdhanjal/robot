@@ -7,3 +7,6 @@ Firefox
 
 Chrome
     Open Browser    https://www.google.com    chrome
+
+Teardown
+    Close All Browsers

@@ -12,7 +12,7 @@ ${random}    ${EMPTY}
 
 *** Test Cases ***
 Create L1 User
-    [Documentation]    Login as the admin and create a L4 User
+    [Documentation]    Login as the admin and create a L1 User
     Setup
     Open Environment    qa    web
     Portal Login Page Should Be Loaded
@@ -29,11 +29,12 @@ Create L1 User
     Input Password    Password1
     Input Confirm Password    Password1
     Input Email    robottest+${random}@coredial.com
-    Click Save Button
+    #Click Save Button
+    Close All Browsers
     
 *** Keywords ***
 Setup
     # Generate random string for new user data
-    ${r}=    Generate Random String    6    [UPPER][NUMBERS]
+    ${r}=    Generate Random String    3    [UPPER][NUMBERS]
     Set Test Variable    ${random}    ${r}
     #Log    Random = ${random}
