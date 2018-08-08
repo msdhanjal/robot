@@ -2,4 +2,4 @@ results/selenium-screenshot-*.png
 results/report.html
 results/log.html
 results/output.xml
-results
+results/geckodriver.log
