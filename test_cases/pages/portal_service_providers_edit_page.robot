@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Keywords for Portal Home page
+Documentation     Keywords for Portal Service Providers Edit Page
 Library           SeleniumLibrary
 
 *** Variables ***
