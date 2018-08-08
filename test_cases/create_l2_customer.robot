@@ -10,11 +10,11 @@ Library           String
 
 *** Variables ***
 ${random}       ${EMPTY}
-${sp}=          Astrsk_Broad 82104634
+${sp}=          RobotTestServiceProvider
 
 *** Test Cases ***
 Create L2 User
-    [Documentation]    Login as the admin and create a L2 user on a given service provider
+    [Documentation]    Login as the admin and create a L2 customer
     Setup
     Open Environment    uat    web
     Portal Login Page Should Be Loaded
@@ -22,22 +22,11 @@ Create L2 User
     Portal Home Page Should Be Loaded
     Click On Service Providers Tab
     Service Providers Search Page Should Be Loaded
-    Search For    ${sp}
-    Search Results Should Contain    ${sp}
-    Click Search Result    ${sp}
-    User Should Be On L2 Level For    ${sp}
-    Click On Settings Tab
-    Portal Settings Page Should Be Loaded
-    Click Manage Users Tab
-    Click New User Button
-    New User Edit Page Should Be Loaded
-    Input First Name    Robot+${random}
-    Input Last Name    Test+${random}
-    Input User Name    robotuser+${random}
-    Input Password    Password1
-    Input Confirm Password    Password1
-    Input Email    robottest+${random}@coredial.com
-    #Click Save Button
+    Click New Service Provider Button
+    New Service Providers Edit Page Should Be Loaded
+
+    User Should Be On L2 Level For    ${sp}+random
+    
     Close All Browsers
 
 *** Keywords ***
