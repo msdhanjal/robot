@@ -9,7 +9,6 @@ Library           SeleniumLibrary
 ...                 user_name_field=username
 ...                 password_field=password
 ...                 confirm_password_field=confirmPassword
-...                 email_field=email
 ...                 save_button=(//button[@value='Save'])[1]
 
 *** Keywords ***
@@ -41,11 +40,6 @@ Input Confirm Password
     [Arguments]    ${confirm-password}
     Wait Until Element Is Enabled    ${PNUP_LOCATORS.confirm_password_field}
     Input Text    ${PNUP_LOCATORS.confirm_password_field}    ${confirm-password}
-
-Input Email
-    [Arguments]    ${email}
-    Wait Until Element Is Enabled    ${PNUP_LOCATORS.email_field}
-    Input Text    ${PNUP_LOCATORS.email_field}    ${email}
 
 Click Save Button
     Wait Until Element Is Enabled    ${PNUP_LOCATORS.save_button}

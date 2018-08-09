@@ -11,6 +11,7 @@ ${browser}=         chrome
 &{PCK_LOCATORS}     search_box=//input[@id='searchBox']
 ...                 search_button=//button[text()='Search']
 ...                 search_results=//div[contains(@class, 'box-content')]//a[contains(text(), '__SEARCH-RESULT__')]
+...                 email_field=email
 
 *** Keywords ***
 Open Environment
@@ -37,3 +38,8 @@ Click Search Result
     [Arguments]    ${search-text}
     ${result}=    Replace String    ${PCK_LOCATORS.search_results}    __SEARCH-RESULT__    ${search-text}
     Click Element    ${result}
+
+Input Email
+    [Arguments]    ${email}
+    Wait Until Element Is Enabled    ${PCK_LOCATORS.email_field}
+    Input Text    ${PCK_LOCATORS.email_field}    ${email}

@@ -2,6 +2,7 @@
 Resource          pages/portal_login_page.robot
 Resource          pages/portal_new_user_edit_page.robot
 Resource          pages/portal_service_providers_search_page.robot
+Resource          pages/portal_service_providers_edit_page.robot
 Resource          pages/portal_home_page.robot
 Resource          pages/portal_settings_page.robot
 Resource          pages/portal_common_keywords.robot
@@ -24,8 +25,14 @@ Create L2 User
     Service Providers Search Page Should Be Loaded
     Click New Service Provider Button
     New Service Providers Edit Page Should Be Loaded
-
-    User Should Be On L2 Level For    ${sp}+random
+    Input Company Name    Test
+    Input Identifier    Test
+    Input Content Prefix    Test
+    Select Asterisk Checkbox
+    Input Email    Test@Test.com
+    Input City    Test
+    Input Street    1111
+    Select State    Pennsylvania
     
     Close All Browsers
 
