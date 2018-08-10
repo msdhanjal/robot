@@ -4,22 +4,23 @@ Library           SeleniumLibrary
 
 *** Variables ***
 &{PSPEP_LOCATORS}   new_servive_provider_header=//span[text()='New Service Provider']
-...                 company_name_field=//input[@id='companyName']
-...                 identifier_field=//input[@id='identifier']
-...                 content_prefix_field=//input[@id='prefix']
-...                 asterisk_checkbox=//input[@id='platform_1']
-...                 broadworks_checkbox=//input[@id='platform_2']
-...                 street_field=//input[@id='street1']
-...                 city_field=//input[@id='city']
-...                 state_field=//select[@id='state']
-...                 zipcode_field=//input[@id='zipCode']
-...                 add_hostname_field=//input[@id='hostName']
-...                 current_hostname_field=//select[@id='currentHostName']
-...                 uc_meeting_hostname_field=//input[@id='meetingSubdomain']
+...                 company_name_field=companyName
+...                 identifier_field=identifier
+...                 content_prefix_field=prefix
+...                 asterisk_checkbox=platform_1
+...                 broadworks_checkbox=platform_2
+...                 street_field=street1
+...                 city_field=city
+...                 state_field=state
+...                 zipcode_field=zipCode
+...                 add_hostname_field=hostName
+...                 add_hostname_button=addHost
+...                 current_hostname_field=currentHostName
+...                 uc_meeting_hostname_field=meetingSubdomain
 ...                 tax_automation_checkbox=//input[@id='Tax Automation']
-...                 contract_type_field=//select[@id='statement_of_work_template_id']
-...                 contract_effective_date=//input[@id='contract_effective_date']
-...                 contract_duration_field=//input[@id='contract_duration']
+...                 contract_type_field=statement_of_work_template_id
+...                 contract_effective_date=contract_effective_date
+...                 contract_duration_field=contract_duration
 ...                 save_button=(//button[contains(text(), 'Save')])[1]
 
 *** Keywords ***
@@ -73,3 +74,45 @@ Select State
     [Arguments]    ${street}
     Wait Until Element Is Enabled    ${PSPEP_LOCATORS.state_field}
     Select From List By Label    ${PSPEP_LOCATORS.state_field}    ${street}
+
+Input Zipcode
+    [Arguments]    ${zip}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.zipcode_field}
+    Input Text    ${PSPEP_LOCATORS.zipcode_field}    ${zip}
+
+Input Hostname
+    [Arguments]    ${hostname}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.add_hostname_field}
+    Input Text    ${PSPEP_LOCATORS.add_hostname_field}    ${hostname}
+
+Click Add Hostname Button
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.add_hostname_button}
+    Click Element    ${PSPEP_LOCATORS.add_hostname_button}
+
+Input Uc Meeting Hostname
+    [Arguments]    ${uc-hostname}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.uc_meeting_hostname_field}
+    Input Text    ${PSPEP_LOCATORS.uc_meeting_hostname_field}    ${uc-hostname}
+
+Select Tax Automation Checkbox
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.tax_automation_checkbox}
+    Select Checkbox    ${PSPEP_LOCATORS.tax_automation_checkbox}
+
+Unselect Tax Automation Checkbox
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.tax_automation_checkbox}
+    Unelect Checkbox    ${PSPEP_LOCATORS.tax_automation_checkbox}
+
+Select Contract Type
+    [Arguments]    ${contract-type}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.contract_type_field}
+    Select From List By Label    ${PSPEP_LOCATORS.contract_type_field}    ${contract-type}
+
+Input Contract Effective Date
+    [Arguments]    ${con-eff-date}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.contract_effective_date}
+    Input Text    ${PSPEP_LOCATORS.contract_effective_date}    ${con-eff-date}
+
+Input Contract Duration
+    [Arguments]    ${con-duration}
+    Wait Until Element Is Enabled    ${PSPEP_LOCATORS.contract_duration_field}
+    Input Text    ${PSPEP_LOCATORS.contract_duration_field}    ${con-duration}

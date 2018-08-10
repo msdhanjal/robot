@@ -8,6 +8,7 @@ Resource          pages/portal_settings_page.robot
 Resource          pages/portal_common_keywords.robot
 Library           SeleniumLibrary
 Library           String
+Library           Dialogs
 
 *** Variables ***
 ${random}       ${EMPTY}
@@ -25,6 +26,7 @@ Create L2 User
     Service Providers Search Page Should Be Loaded
     Click New Service Provider Button
     New Service Providers Edit Page Should Be Loaded
+    #${company}=    Get Value From User    Please enter Company Name
     Input Company Name    Test
     Input Identifier    Test
     Input Content Prefix    Test
@@ -33,6 +35,14 @@ Create L2 User
     Input City    Test
     Input Street    1111
     Select State    Pennsylvania
+    Input Zipcode    12125
+    Input Hostname    TestHost
+    Click Add Hostname Button
+    Input Uc Meeting Hostname    www.test2
+    Select Tax Automation Checkbox
+    Select Contract Type    Premier
+    Input Contract Effective Date    08/07/2018
+    Input Contract Duration    5
     
     Close All Browsers
 
