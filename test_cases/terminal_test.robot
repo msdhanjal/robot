@@ -6,6 +6,8 @@ Library             OperatingSystem
 Library             Telnet
 
 *** Test Cases ***
-Test IPConfig
-    Run    ssh cdqa@uat-box.dev.coredial.com
-    #Log To Console     ${frt}
+Test Terminal
+    # Run    ssh cdqa@uat-box.dev.coredial.com
+    # Sleep    5s
+    # Run    vssh    web
+    # #Log To Console     ${frt}
