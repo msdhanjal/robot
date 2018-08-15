@@ -10,7 +10,7 @@ Test Terminal
     ${r}=    Run    pwd
     Log To Console    ${r}
     Run    cd ..
-    ${r2}=    Run    pwd
+    ${r2}=    Run    ls
     Log To Console    ${r2}
 
     # Sleep    5s
