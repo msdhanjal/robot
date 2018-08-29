@@ -1,9 +1,9 @@
 *** Settings ***
-Resource          pages/portal_login_page.robot
-Resource          pages/portal_new_user_edit_page.robot
-Resource          pages/portal_home_page.robot
-Resource          pages/portal_settings_page.robot
-Resource          pages/portal_common_keywords.robot
+Resource          ../pages/portal_login_page.robot
+Resource          ../pages/portal_new_user_edit_page.robot
+Resource          ../pages/portal_home_page.robot
+Resource          ../pages/portal_settings_page.robot
+Resource          ../pages/portal_common_keywords.robot
 Library           SeleniumLibrary
 Library           String
 

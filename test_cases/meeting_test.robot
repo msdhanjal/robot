@@ -1,7 +1,7 @@
 *** Settings ***
-Resource          pages/portal_login_page.robot
-Resource          pages/ucc_main_page.robot
-Resource          pages/portal_common_keywords.robot
+Resource          ../pages/portal_login_page.robot
+Resource          ../pages/ucc_main_page.robot
+Resource          ../pages/portal_common_keywords.robot
 Library           SeleniumLibrary
 Library           String
 Library           Dialogs
