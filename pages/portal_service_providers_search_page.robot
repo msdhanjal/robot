@@ -16,3 +16,4 @@ Service Providers Search Page Should Be Loaded
 Click New Service Provider Button
     Wait Until Element Is Enabled    ${PSPSP_LOCATORS.new_service_provider_button}
     Click Element    ${PSPSP_LOCATORS.new_service_provider_button}
+    

@@ -50,7 +50,6 @@ Create L2 User
     \   Wait Until Element Is Visible    //p[contains(text(), 'Customer successfully created.')]
 
 
-
 *** Keywords ***
 Setup
     # Generate random string for new user data
