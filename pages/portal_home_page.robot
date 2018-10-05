@@ -6,6 +6,7 @@ Library           SeleniumLibrary
 &{PHP_LOCATORS}     home_tab=//a[text()='Home']
 ...                 settings_tab=//a[text()='Settings']
 ...                 service_providers_tab=//a[text()='Service Providers']
+...                 customers_tab=//a[text()='Customers']
 ...                 l2_level_breadcrumb=//div[contains(@class, 'bread-wrap')]//a[@class='breadcrumb_item_link']//span[contains(text(), '__L2-SP__')]
 
 *** Keywords ***
@@ -17,6 +18,10 @@ Portal Home Page Should Be Loaded
 Click On Settings Tab
     Wait Until Element Is Enabled    ${PHP_LOCATORS.settings_tab}
     Click Element    ${PHP_LOCATORS.settings_tab}
+
+Click On Customers Tab
+    Wait Until Element Is Enabled    ${PHP_LOCATORS.customers_tab}
+    Click Element    ${PHP_LOCATORS.customers_tab}
 
 Click On Service Providers Tab
     Wait Until Element Is Enabled    ${PHP_LOCATORS.service_providers_tab}

@@ -14,7 +14,6 @@ ${sp}=          Astrsk_Broad 82104634
 
 *** Test Cases ***
 Create L2 User
-
     [Documentation]    Login as the admin and create a L2 user on a given service provider
     Setup
     Open Environment    uat    web
