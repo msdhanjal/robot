@@ -19,4 +19,3 @@ Portal Login Page Should Be Loaded
     Wait Until Element Is Enabled    ${PLP_LOCATORS.login_button}
     Location Should Contain    /login
     
-    
