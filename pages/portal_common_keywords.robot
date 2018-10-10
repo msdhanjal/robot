@@ -12,6 +12,10 @@ ${browser}=         chrome
 ...                 search_button=//button[text()='Search']
 ...                 search_results=//div[contains(@class, 'box-content')]//a[contains(text(), '__SEARCH-RESULT__')]
 ...                 email_field=email
+...                 tab_name=//a//span[contains(text(),'__TAB-NAME__')]
+...                 expanded_tab_up_arrow=//a[contains(@class,'in') and span[contains(text(),'__TAB-NAME__')]]
+...                 collapsed_tab=//a[not(contains(@class,'in')) and span[contains(text(),'__TAB-NAME__')]]
+...                 collapsed_tab_down_arrow=//a[not(contains(@class,'in')) and span[contains(text(),'__TAB-NAME__')]]//i
 
 *** Keywords ***
 Open Environment
@@ -43,3 +47,18 @@ Input Email
     [Arguments]    ${email}
     Wait Until Element Is Enabled    ${PCK_LOCATORS.email_field}
     Input Text    ${PCK_LOCATORS.email_field}    ${email}
+
+Expand Tab If Not Already
+    [Arguments]    ${tab-name}
+    ${COLLAPSED-TAB}=    Replace String    ${PCK_LOCATORS.collapsed_tab}    __TAB-NAME__    ${tab-name}
+    ${COLLAPSED-ARROW}=    Replace String    ${PCK_LOCATORS.collapsed_tab_down_arrow}    __TAB-NAME__    ${tab-name}
+    ${EXPANDED-TAB}=    Replace String    ${PCK_LOCATORS.expanded_tab_up_arrow}    __TAB-NAME__    ${tab-name}
+    ${IsTabCollapsed}=    Run Keyword And Return Status    Element Should Be Visible    ${COLLAPSED-TAB}
+    Run Keyword If      ${IsTabCollapsed}    Click Element    ${COLLAPSED-ARROW}
+    Run Keyword If      ${IsTabCollapsed}    Wait Until Element Is Visible    ${EXPANDED-TAB}
+
+Click Tab
+    [Arguments]    ${tab-name}
+    ${tab}=    Replace String    ${PCK_LOCATORS.tab_name}    __TAB-NAME__    ${tab-name}
+    Wait Until Element Is Enabled    ${tab}
+    Click Element    ${tab}
