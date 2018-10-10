@@ -21,18 +21,18 @@ Create L1 User
     Click On Settings Tab
     Portal Settings Page Should Be Loaded
     Expand Tab If Not Already    Manage Users
-    Click Tab    Server Settings
-    # Click Manage Users Tab
-    # Click New User Button
-    # New User Edit Page Should Be Loaded
-    # Input First Name    Robot+${random}
-    # Input Last Name    Test+${random}
-    # Input User Name    robotuser+${random}
-    # Input Password    Password1
-    # Input Confirm Password    Password1
-    # Input Email    robottest+${random}@coredial.com
-    # #Click Save Button
-    # Close All Browsers
+    # Click Tab    Server Settings
+    Click Manage Users Tab
+    Click New User Button
+    New User Edit Page Should Be Loaded
+    Input First Name    Robot+${random}
+    Input Last Name    Test+${random}
+    Input User Name    robotuser+${random}
+    Input Password    Password1
+    Input Confirm Password    Password1
+    Input Email    robottest+${random}@coredial.com
+    #Click Save Button
+    Close All Browsers
     
 *** Keywords ***
 Setup
