@@ -25,7 +25,7 @@ Retrieve Row Count From
 Retrieve Records From
     # [Arguments]    ${table-name}
     # ${result}=    Execute SQL String    select extensionId from user_extension where userId = 5;
-    ${output} =    Query    select extensionId from user_extension where userId = 5;
+    ${output} =    Query    select extensionId from user_extension where userId = 4;
     Log    ${output}
     # Log    ${result}
     Log To Console    ${output}

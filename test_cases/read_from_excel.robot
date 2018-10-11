@@ -5,7 +5,7 @@ Library           robot.api.logger
 Library           Selenium2Library
 
 *** Variables ***
-${file-name}    test_cases/files/TestSheet.xls
+${file-name}    files/TestSheet.xls
 
 *** Test Cases ***
 Get Value From Excel
@@ -18,9 +18,10 @@ Get Value From Excel
     # \    Log To Console    ${test2}
 
     #${test2}=    Read Cell Data By Name    Data    A2
-    ${test3}=    Get Row Values    Data    5
+    ${test3}=    Get Row Values    Data    4
     #${value}=    Sheet Name Test Case Name Column Name    Data    TC_02    Browser
     Log To Console    ${test1}
+    Log To Console    ${test3}
     #Log To Console    ${value}
     Close All Browsers
 

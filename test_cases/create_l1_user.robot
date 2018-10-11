@@ -20,7 +20,7 @@ Create L1 User
     Portal Home Page Should Be Loaded
     Click On Settings Tab
     Portal Settings Page Should Be Loaded
-    Expand Tab If Not Already    Manage Users
+    Expand Tab    Manage Users
     # Click Tab    Server Settings
     Click Manage Users Tab
     Click New User Button

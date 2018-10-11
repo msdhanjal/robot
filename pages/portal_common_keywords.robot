@@ -48,7 +48,7 @@ Input Email
     Wait Until Element Is Enabled    ${PCK_LOCATORS.email_field}
     Input Text    ${PCK_LOCATORS.email_field}    ${email}
 
-Expand Tab If Not Already
+Expand Tab
     [Arguments]    ${tab-name}
     ${COLLAPSED-TAB}=    Replace String    ${PCK_LOCATORS.collapsed_tab}    __TAB-NAME__    ${tab-name}
     ${COLLAPSED-ARROW}=    Replace String    ${PCK_LOCATORS.collapsed_tab_down_arrow}    __TAB-NAME__    ${tab-name}
